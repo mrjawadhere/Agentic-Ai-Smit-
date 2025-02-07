@@ -1,14 +1,17 @@
 from fastapi import FastAPI
 
-app = FastAPI()
-
-@app.get("/login")
-
-def hello_fastapo():
-    return {"Hello": "World"}
+app = FastAPI() 
 
 
-@app.get("/login username")
+@app.get("/")
+def get_root():
+    print("Fucntion called")
+    return {"message": "Hello World"}
 
-def hello_fastapi1():
-    return {"Hello": "World"}
+@app.get("/login")  
+def get_login():
+    return {"message": "Login"}
+
+@app.get("/signup")  
+def get_signup():
+    return {"message": "Signup"}
